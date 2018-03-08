@@ -5,18 +5,22 @@ import { StyleSheet, Text, View } from 'react-native';
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <BingoBoard/>
+      <View>
+        <View style={styles.title}>
+          <Text> PARTY BINGO </Text>
+          <Text> when someone... </Text>
+        </View>
+        <View>
+          <BingoBoard/>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: '#fff',
+  title: {
+    marginTop: 50,
     alignItems: 'center',
     justifyContent: 'center',
   },

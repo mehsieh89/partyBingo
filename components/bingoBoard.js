@@ -1,4 +1,5 @@
 import React from 'react';
+import options from './options.js';
 import { Text, View, StyleSheet } from 'react-native';
 
 export default class BingoBoard extends React.Component {
