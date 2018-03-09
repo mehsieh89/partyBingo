@@ -1,9 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import BingoBoard from './bingoBoard.js';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button, Icon } from 'react-native-material-ui';
+import { checkTest } from '../actions';
 
-export default class Main extends React.Component {
+class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,6 +42,20 @@ export default class Main extends React.Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    checkTest: checkTest,
+  }, dispatch);
+}
+
+const mapStateToProps = (state) => {
+  return {
+    test: state.allReducers.test,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
 
 const styles = StyleSheet.create({
   title: {
