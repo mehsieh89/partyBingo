@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { options } from './options.js';
+import BingoCell from './bingoCell.js';
 import { Text, View, StyleSheet } from 'react-native';
 
 class BingoBoard extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+    }
     this.shuffleArray = this.shuffleArray.bind(this);
   }
 
@@ -34,16 +37,20 @@ class BingoBoard extends Component {
             return row.map(function(col, colIndex) {
               if (rowIndex === 2 && colIndex === 2) {
                 return (
-                  <View style={styles.text} key={colIndex}>
+                  <View style={styles.free} key={colIndex}>
                     <Text> {board[2][2]} </Text>
                   </View>
                 )
               } else {
                 let index = board[rowIndex][colIndex];
                 return (
-                  <View style={styles.text} key={colIndex}>
-                    <Text> {boardInput[board[rowIndex][colIndex]]} </Text>
-                  </View>
+                  <BingoCell
+                    key={colIndex}
+                    data={boardInput[board[rowIndex][colIndex]]}
+                  />
+                  // <View style={styles.text} key={colIndex}>
+                  //   <Text> {boardInput[board[rowIndex][colIndex]]} </Text>
+                  // </View>
                 )
               }
             })
@@ -62,12 +69,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     flexWrap: "wrap",
   },
-  text: {
+  free: {
+    backgroundColor: "green",
     height: 90,
     width: 72,
     borderRadius: 2,
     borderWidth: 2,
-  }
+  },
 });
 
 export default BingoBoard;
