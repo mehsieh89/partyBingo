@@ -1,4 +1,4 @@
-export const options = ["spills a drink", "complains about their work",
+export const options = ["spills a drink", "says work sucks",
 "gets lost", "is way too thirsty", "starts yelling", "passes out", "breaks an object",
 "loses a belonging", "dabs", "starts throwing hand signs", "starts having munchies",
 "calls for a round of shots", "starts singing", "starts dancing", "starts throwing up",

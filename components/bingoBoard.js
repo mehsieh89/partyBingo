@@ -38,7 +38,7 @@ class BingoBoard extends Component {
               if (rowIndex === 2 && colIndex === 2) {
                 return (
                   <View style={styles.free} key={colIndex}>
-                    <Text> {board[2][2]} </Text>
+                    <Text style={styles.text}> {board[2][2]} </Text>
                   </View>
                 )
               } else {
@@ -48,9 +48,6 @@ class BingoBoard extends Component {
                     key={colIndex}
                     data={boardInput[board[rowIndex][colIndex]]}
                   />
-                  // <View style={styles.text} key={colIndex}>
-                  //   <Text> {boardInput[board[rowIndex][colIndex]]} </Text>
-                  // </View>
                 )
               }
             })
@@ -63,18 +60,25 @@ class BingoBoard extends Component {
 
 const styles = StyleSheet.create({
   board: {
-    marginLeft: 5,
+    marginLeft: 2,
+    justifyContent: "center",
     flex: 1,
     flexDirection: "row",
     backgroundColor: '#fff',
     flexWrap: "wrap",
   },
   free: {
+    marginLeft: -2,
+    marginTop: -2,
     backgroundColor: "green",
     height: 90,
     width: 72,
     borderRadius: 2,
     borderWidth: 2,
+    justifyContent: "center",
+  },
+  text: {
+    textAlign: "center",
   },
 });
 

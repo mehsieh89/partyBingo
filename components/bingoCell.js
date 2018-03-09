@@ -8,6 +8,8 @@ class BingoCell extends Component {
     this.state = {
       highlight: false,
       cell: {
+        marginLeft: -2,
+        marginTop: -2,
         height: 90,
         width: 72,
         borderRadius: 2,
@@ -22,6 +24,8 @@ class BingoCell extends Component {
       this.setState({
         highlight: true,
         cell: {
+          marginLeft: -2,
+          marginTop: -2,
           height: 90,
           width: 72,
           borderRadius: 2,
@@ -33,6 +37,8 @@ class BingoCell extends Component {
       this.setState({
           highlight: false,
           cell: {
+            marginLeft: -2,
+            marginTop: -2,
             height: 90,
             width: 72,
             borderRadius: 2,
@@ -47,7 +53,7 @@ class BingoCell extends Component {
       <View style={this.state.cell}>
         <TouchableHighlight onPress={this.handleOnClick}>
           <View style={styles.box}>
-            <Text> {this.props.data} </Text>
+            <Text style={styles.text}> {this.props.data} </Text>
           </View>
         </TouchableHighlight>
       </View>
@@ -57,8 +63,12 @@ class BingoCell extends Component {
 
 const styles = StyleSheet.create({
   box: {
+    justifyContent: "center",
     height: "100%",
     width: "100%",
+  },
+  text: {
+    textAlign: "center",
   },
 });
 
