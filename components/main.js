@@ -32,7 +32,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.appView}>
         <View>
           <View style={styles.title}>
             <Text style={styles.appName}> CARDI B-INGO </Text>
@@ -84,8 +84,10 @@ const styles = StyleSheet.create({
   button: {
     width: '30%',
     position: 'relative',
-    alignItems: 'center',
-    top: 470,
+    top: 460,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    backgroundColor: "#6C648B"
   },
   appName: {
     fontSize: 36,

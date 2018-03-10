@@ -5,7 +5,11 @@ import { ThemeProvider } from 'react-native-material-ui';
 import Main from './components/main.js';
 import allReducers from './reducers';
 
-const uiTheme = {};
+const uiTheme = {
+  palette: {
+    primaryColor: '#6C648B',
+  }
+};
 const store = createStore(allReducers);
 
 export default class App extends React.Component {

@@ -30,7 +30,7 @@ class BingoCell extends Component {
           width: 72,
           borderRadius: 2,
           borderWidth: 2,
-          backgroundColor: "green",
+          backgroundColor: "#6BBAA7",
         }
       });
     } else {

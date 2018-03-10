@@ -60,13 +60,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flex: 1,
     flexDirection: "row",
-    backgroundColor: '#fff',
     flexWrap: "wrap",
+    backgroundColor: "#6C648B"
   },
   free: {
     marginLeft: -2,
     marginTop: -2,
-    backgroundColor: "green",
+    backgroundColor: "#6BBAA7",
     height: 90,
     width: 72,
     borderRadius: 2,
