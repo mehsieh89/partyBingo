@@ -1,37 +1,33 @@
 import React, { Component } from 'react';
-import { options } from './options.js';
 import BingoCell from './bingoCell.js';
+import { options } from './options.js';
 import { Text, View, StyleSheet } from 'react-native';
 
 class BingoBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      board: [
+        [0, 1, 2, 3, 4],
+        [5, 6, 7, 8, 9],
+        [10, 11, 'FREE', 12, 13],
+        [14, 15, 16, 17, 18],
+        [19, 20, 21, 22, 23]
+      ],
     }
-    this.shuffleArray = this.shuffleArray.bind(this);
   }
 
-  shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    let newArray = array.slice(0, 24);
-    return newArray;
+  componentDidMount() {
+    let boardInput = this.props.shuffle(options);
+    this.props.importBoard(boardInput);
   }
 
   render() {
-    let board = [
-          [0, 1, 2, 3, 4],
-          [5, 6, 7, 8, 9],
-          [10, 11, 'FREE', 12, 13],
-          [14, 15, 16, 17, 18],
-          [19, 20, 21, 22, 23]
-        ]
-    let boardInput = this.shuffleArray(options);
+    let optionsBoard = this.props.board
+    let board = this.state.board
 
     return (
-      <View style={styles.board}>
+      <View key={Date.now()} style={styles.board}>
         {
           board.map((row, rowIndex) => {
             return row.map(function(col, colIndex) {
@@ -46,7 +42,7 @@ class BingoBoard extends Component {
                 return (
                   <BingoCell
                     key={colIndex}
-                    data={boardInput[board[rowIndex][colIndex]]}
+                    data={optionsBoard[board[rowIndex][colIndex]]}
                   />
                 )
               }

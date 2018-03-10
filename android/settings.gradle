@@ -1,0 +1,3 @@
+rootProject.name = 'partyBingo'
+
+include ':app'

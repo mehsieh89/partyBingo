@@ -1,5 +1,6 @@
-export const checkTest = () => {
+export const importBoard = (array) => {
   return {
-    type: "CHECK_TEST",
+    type: "IMPORT_BOARD",
+    payload: array
   };
 };

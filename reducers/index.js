@@ -1,15 +1,15 @@
 import {combineReducers} from "redux";
 
 let initialState = {
-  test: true,
+  board: [],
 }
 
 const allReducers = (state = initialState, action) => {
   switch (action.type) {
 
-  case 'CHECK_TEST' :
+  case 'IMPORT_BOARD' :
     let newState = Object.assign({}, state);
-    newState.test = !newState.test;
+    newState.board = action.payload;
     return newState;
 
   default:
